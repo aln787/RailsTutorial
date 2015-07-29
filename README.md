@@ -3,7 +3,7 @@
 ##Path
 - Initially viewed [this tutorial](https://www.youtube.com/watch?v=Gzj723LkRJY) but ran into issues since in was using scaffold which does not seem to be supported in rails 2.x
 - Switched to [this guide](http://guides.rubyonrails.org/getting_started.html)
-	- Currently at section 5.10 Adding Some Validation
+	- Currently at section 8 Deleting Comments
 
 ##Important links
 - http://apple.stackexchange.com/questions/130324/howto-install-mysql-utilities-using-brew-or-brew-cask
