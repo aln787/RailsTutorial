@@ -23,6 +23,10 @@
   RAILS_ENV=development rake db:migrate
   rails s -e development
   ```
+  - undefined method `comments' for #<Article:0x007f9bc233f198>
+    - has_many :comments, is required in the articles class
+    - http://stackoverflow.com/questions/5895808/undefined-method-comments-for-post0x19f3d70
+
 
 ##Mysql
 - brew install mysql
