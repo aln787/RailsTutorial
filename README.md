@@ -1,5 +1,10 @@
 #Ruby on Rails Tutorial
 
+##Path
+- Initially viewed [this tutorial](https://www.youtube.com/watch?v=Gzj723LkRJY) but ran into issues since in was using scaffold which does not seem to be supported in rails 2.x
+- Switched to [this guide](http://guides.rubyonrails.org/getting_started.html)
+	- Currently at section 5.10 Adding Some Validation
+
 ##Important links
 - http://apple.stackexchange.com/questions/130324/howto-install-mysql-utilities-using-brew-or-brew-cask
 - https://gorails.com/setup/osx/10.10-yosemite
@@ -11,3 +16,16 @@
   - https://github.com/carsomyr/rbenv-bundler
   - http://stackoverflow.com/questions/27686613/error-could-not-find-i18n-0-7-0-in-any-of-the-sources
   - http://stackoverflow.com/questions/7483515/rake-aborted-no-such-file-to-load-bundler-setup-rails-3-1
+  - http://stackoverflow.com/questions/21309901/getting-migrations-are-pending-run-bin-rake-dbmigrate-rails-env-development
+  ```
+  rm -f db/*.sqlite3
+  rake db:create
+  RAILS_ENV=development rake db:migrate
+  rails s -e development
+  ```
+
+##Mysql
+- brew install mysql
+- mysql.server restart
+	- http://blog.joefallon.net/2013/10/install-mysql-on-mac-osx-using-homebrew/
+- mysql -u DBUSER -h DBSERVERNAME -p
