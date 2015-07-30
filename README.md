@@ -26,6 +26,8 @@
   - undefined method `comments' for #<Article:0x007f9bc233f198>
     - has_many :comments, is required in the articles class
     - http://stackoverflow.com/questions/5895808/undefined-method-comments-for-post0x19f3d70
+- Heroku doesn't support sqlite3
+  - http://stackoverflow.com/questions/13083399/heroku-deployment-failed-because-of-sqlite3-gem-error
 
 
 ##Mysql
@@ -33,3 +35,17 @@
 - mysql.server restart
 	- http://blog.joefallon.net/2013/10/install-mysql-on-mac-osx-using-homebrew/
 - mysql -u DBUSER -h DBSERVERNAME -p
+
+##PSQL
+- brew install postgresql
+- postgres -D /usr/local/var/postgres
+
+##Heroku
+- brew cask install heroku-toolbelt
+- git push heroku master
+- Heroku logs
+
+
+#Rails
+- rails server
+- bundle install
