@@ -3,7 +3,8 @@
 ##Path
 - Initially viewed [this tutorial](https://www.youtube.com/watch?v=Gzj723LkRJY) but ran into issues since in was using scaffold which does not seem to be supported in rails 2.x
 - Switched to [this guide](http://guides.rubyonrails.org/getting_started.html)
-	- Currently at section 9.2 Other Security Considerations
+- Moving on to [the rails tutorial](https://www.railstutorial.org/book/beginning) using [cloud 9](https://ide.c9.io/aln787/rails-tutorial) as recommended.
+  - Stopped at section 1.4.1 Installation and Setup
 
 ##Important links
 - http://apple.stackexchange.com/questions/130324/howto-install-mysql-utilities-using-brew-or-brew-cask
@@ -46,6 +47,12 @@
 - Heroku logs
 
 
-#Rails
+##Rails
 - rails server
 - bundle install
+
+##Cloud 9
+- https://ide.c9.io/aln787/rails-tutorial
+###Commands
+- ```rails server -b $IP -p $PORT``` 
+  - Used instead of ```rails server``` for cloud 9 development
