@@ -4,7 +4,7 @@
 - Initially viewed [this tutorial](https://www.youtube.com/watch?v=Gzj723LkRJY) but ran into issues since in was using scaffold which does not seem to be supported in rails 2.x
 - Switched to [this guide](http://guides.rubyonrails.org/getting_started.html)
 - Moving on to [the rails tutorial](https://www.railstutorial.org/book/beginning) using [cloud 9](https://ide.c9.io/aln787/rails-tutorial) as recommended.
-  - Stopped at section 1.4.1 Installation and Setup
+  - Completed ch 2 a toy app.
 
 ##Important links
 - http://apple.stackexchange.com/questions/130324/howto-install-mysql-utilities-using-brew-or-brew-cask
@@ -38,18 +38,33 @@
 - mysql -u DBUSER -h DBSERVERNAME -p
 
 ##PSQL
-- brew install postgresql
-- postgres -D /usr/local/var/postgres
+```
+$ brew install postgresql
+$ postgres -D /usr/local/var/postgres
+```
 
 ##Heroku
-- brew cask install heroku-toolbelt
-- git push heroku master
-- Heroku logs
-
+```
+$ brew cask install heroku-toolbelt
+$ git push heroku master
+$ Heroku logs
+```
+###Other Commands
+```
+$ heroku version
+$ heroku login
+$ heroku keys:add
+$ heroku create
+$ git push heroku master
+$ heroku rename rails-tutorial-hello
+heroku run rake db:migrate
+```
 
 ##Rails
-- rails server
-- bundle install
+```
+$ rails server
+$ bundle install
+```
 
 ##Cloud 9
 - https://ide.c9.io/aln787/rails-tutorial
