@@ -4,7 +4,7 @@
 - Initially viewed [this tutorial](https://www.youtube.com/watch?v=Gzj723LkRJY) but ran into issues since in was using scaffold which does not seem to be supported in rails 2.x
 - Switched to [this guide](http://guides.rubyonrails.org/getting_started.html)
 - Moving on to [the rails tutorial](https://www.railstutorial.org/book/beginning) using [cloud 9](https://ide.c9.io/aln787/rails-tutorial) as recommended.
-  - Stopped at 3.7.2 Backtrace silencer
+  - Stopped at 4.4 Ruby classes
 
 ##Important links
 - http://apple.stackexchange.com/questions/130324/howto-install-mysql-utilities-using-brew-or-brew-cask
@@ -69,12 +69,101 @@ $ rails s ## = $ rails server
 $ rails c ## = $ rails console
 $ rails g ## = $ rails generate
 $ bundle  ## = $ bundle install  
-$ rake    ## = $ rake test 
+$ rake    ## = $ rake test
+$ bundle exec guard init 
 ```
 ###Notes
 - ```<% ... %>``` executes the code inside
 - ```<%= ... %>``` executes it and inserts the result into the template
+- If spring becomes sluggish check running processes ```$ ps aux``` optional add filter options:
+  ```
+  $ ps aux | grep spring
+  ubuntu    1096  0.0  0.0  10548   880 pts/1    S+   13:58   0:00 
+  ```
+  -  kill spring process using the process id:
+  ```
+  $ kill -9 1096
+  ```
+  - Other options for killing spring
+  ```
+  $ spring stop
+  $ pkill -9 -f spring
+  ```
 
+##Ruby
+###Notes
+- Ruby won't interpolate into single quoted strings
+```
+>> 'Go #{team}!'     # Single-quoted strings don't allow interpolation
+=> "Go \#{team}!"
+
+#Checks
+>> "".nil?
+>> "".empty?
+
+#Arrays
+>>"Go Team".split
+=> ["Go", "Team"]
+>> "GoxTeamx!".split('x')
+=> ["Go", "Team", "!"]
+##Accessing arrays
+>> team = ["Go", "Team", "!"]
+>> team[0]
+>> team[-1]
+>> team.first
+>> team.second
+>> team.last
+##Validating Arrays
+>> team.empty?
+>> team.include?("Go")
+>> team.sort #use ! to mutate the array
+>> team.reverse #''
+>> team.shuffle #''
+##Modifying arrays
+>> team.sort! #same as the commands above but includes !
+>> team.push("!!!")
+>> team.pop
+>> team.join
+>> team.join(" ")  #include a space between elements
+##Creating arrays
+>> ('a'..'z').to_a
+=> ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+>> (0..9).to_a
+=> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>> t = %w[working through the ruby tutorial]  
+=> ["working", "through", "the", "ruby", "tutorial"]
+###Accessing 
+>> t[0..1]
+=> ["working", "through"]
+##Enumeration
+>> ('a'..'z').each { |i| puts i.upcase}
+>> ('a'..'z').each do |i|
+?>   puts i.upcase
+?>   puts '--'
+>> end
+>> team.map { |i| i.upcase}
+=> ["GO", "TEAM", "!"]
+team.map(&:upcase)  ##same result as above
+##Provided example
+>> ('a'..'z').to_a.shuffle[0..20].join
+```
+
+###Hashes
+```
+>> team = {}
+>> team["name"] = "Virginia Tech"
+>> team["mascot"] = "Hokie"
+>> team["sport"] = "football"
+>> team
+=> {"name"=>"Virginia Tech", "mascot"=>"Hokie", "sport"=>"football"}
+```
+###Symbols
+```
+>> team1 = {:name => "Virginia Tech", :mascot => "Hokie", :sport => "football"}
+>> team2 = { name: "Virginia Tech", mascot: "Hokie", sport: "football" }
+>> team1 == team2
+=> true
+```
 
 ##Cloud 9
 - https://ide.c9.io/aln787/rails-tutorial
