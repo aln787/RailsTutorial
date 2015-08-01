@@ -4,7 +4,7 @@
 - Initially viewed [this tutorial](https://www.youtube.com/watch?v=Gzj723LkRJY) but ran into issues since in was using scaffold which does not seem to be supported in rails 2.x
 - Switched to [this guide](http://guides.rubyonrails.org/getting_started.html)
 - Moving on to [the rails tutorial](https://www.railstutorial.org/book/beginning) using [cloud 9](https://ide.c9.io/aln787/rails-tutorial) as recommended.
-  - Stopped at 4.4 Ruby classes
+  - Stopped the beginning of chapter 5 Filling in the layout
 
 ##Important links
 - http://apple.stackexchange.com/questions/130324/howto-install-mysql-utilities-using-brew-or-brew-cask
@@ -70,7 +70,7 @@ $ rails c ## = $ rails console
 $ rails g ## = $ rails generate
 $ bundle  ## = $ bundle install  
 $ rake    ## = $ rake test
-$ bundle exec guard init 
+$ bundle exec guard init
 ```
 ###Notes
 - ```<% ... %>``` executes the code inside
@@ -89,6 +89,24 @@ $ bundle exec guard init
   $ spring stop
   $ pkill -9 -f spring
   ```
+###Palindrome?
+```
+if string == string.reverse
+  "This is a palindrome."
+else
+  "This is not a palindrome."
+end
+```
+###Subclassing
+```
+>> class Word < String      # Word inherits from String.
+>>   def palindrome?
+>>     self == self.reverse # self is the string itself.
+  ##self can be excluded on the right == reverse will work
+>>   end
+>> end
+=> nil
+```
 
 ##Ruby
 ###Notes
