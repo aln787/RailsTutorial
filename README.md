@@ -187,6 +187,9 @@ team.map(&:upcase)  ##same result as above
 => true
 ```
 
+##Bootstrap
+- http://getbootstrap.com/customize/
+
 ##Cloud 9
 - https://ide.c9.io/aln787/rails-tutorial
 ###Commands
