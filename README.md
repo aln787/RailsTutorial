@@ -4,8 +4,8 @@
 - Initially viewed [this tutorial](https://www.youtube.com/watch?v=Gzj723LkRJY) but ran into issues since in was using scaffold which does not seem to be supported in rails 2.x
 - Switched to [this guide](http://guides.rubyonrails.org/getting_started.html)
 - Moving on to [the rails tutorial](https://www.railstutorial.org/book/beginning) using [cloud 9](https://ide.c9.io/aln787/rails-tutorial) as recommended.
-  - Completed chapter 5 Filling in the layout
-    - [Curent state of the sample app(work in progress)](https://alex-sample-app-rails-tutorial.herokuapp.com/)
+  - Ready to start 6.3.2 User has secure password
+    - [(work in progress and slow to load when Heroku falls asleep) Curent state of the sample app](https://alex-sample-app-rails-tutorial.herokuapp.com/)
 
 - Future Reading:
   - [Coffee Script](http://railscasts.com/episodes/267-coffeescript-basics)
@@ -75,6 +75,10 @@ $ rails g ## = $ rails generate
 $ bundle  ## = $ bundle install  
 $ rake    ## = $ rake test
 $ bundle exec guard init
+$ bundle exec rake test:models
+$ rake db:test:load
+$ bundle exec rake db:migrate
+$ bundle exec rake db:rollback
 ```
 ###Notes
 - ```<% ... %>``` executes the code inside
@@ -93,6 +97,9 @@ $ bundle exec guard init
   $ spring stop
   $ pkill -9 -f spring
   ```
+- Rails uses active record and migrations to simplify the process of interacting with relational data stores.  (SQL is not required in your rails code.)
+- A model consist of a single user and a db table will store multiple users
+  - When you add ```t.timestamps null: false``` to the migration file it will add 2 db columns (created at the last updated at) 
 ###Palindrome?
 ```
 if string == string.reverse
@@ -186,9 +193,21 @@ team.map(&:upcase)  ##same result as above
 >> team1 == team2
 => true
 ```
+- Simple Example Email Regex (weakness multiple successive dots): ```/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i```
+- Error causing all model test to fail: ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: \
+    column email is not unique: INSERT INTO "users" (...
+  - Resolution: ```$ rake db:test:load``` [details](http://stackoverflow.com/questions/5769758/adding-index-to-email-column-culprit-for-unit-tests-failing)
 
-##Bootstrap
-- http://getbootstrap.com/customize/
+
+##General Links
+- [Bootstrap](http://getbootstrap.com/customize/)
+- https://vesselinv.com/os-x-apps-for-smooth-rails-development/
+- http://macappstore.org/sqlitebrowser/
+- [Regular Expressions](http://rubular.com)
+  - [Rails Testing Guide](http://guides.rubyonrails.org/testing.html)
+- [Cryptographic Hash Function](https://en.wikipedia.org/wiki/Cryptographic_hash_function)
+- [Hash Function](https://en.wikipedia.org/wiki/Hash_function)
+
 
 ##Cloud 9
 - https://ide.c9.io/aln787/rails-tutorial
