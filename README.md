@@ -4,7 +4,7 @@
 - Initially viewed [this tutorial](https://www.youtube.com/watch?v=Gzj723LkRJY) but ran into issues since in was using scaffold which does not seem to be supported in rails 2.x
 - Switched to [this guide](http://guides.rubyonrails.org/getting_started.html)
 - Moving on to [the rails tutorial](https://www.railstutorial.org/book/beginning) using [cloud 9](https://ide.c9.io/aln787/rails-tutorial) as recommended.
-  - Ready to start 6.3.2 User has secure password
+  - Completed chapter 6 Modeling Users
     - [(work in progress and slow to load when Heroku falls asleep) Curent state of the sample app](https://alex-sample-app-rails-tutorial.herokuapp.com/)
 
 - Future Reading:
@@ -193,6 +193,15 @@ team.map(&:upcase)  ##same result as above
 >> team1 == team2
 => true
 ```
+- ```!!``` seems to suppress the return value from user 
+```
+>> !!user.authenticate("foobar")
+=> true
+##Compared to:
+>> user.authenticate("foobar")
+=> #<User id: 2, name: "Mike Jones", email: "mike@example.com", created_at: "2015-08-05 11:15:43", updated_at: "2015-08-05 11:15:43", password_digest: "$2a$10$I615VDRk4WVkLEjD3v7zAuVRrwVb2GfKI7aydd7zjNt...">
+##Example user set up below
+``` 
 - Simple Example Email Regex (weakness multiple successive dots): ```/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i```
 - Error causing all model test to fail: ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: \
     column email is not unique: INSERT INTO "users" (...
@@ -208,6 +217,19 @@ team.map(&:upcase)  ##same result as above
 - [Cryptographic Hash Function](https://en.wikipedia.org/wiki/Cryptographic_hash_function)
 - [Hash Function](https://en.wikipedia.org/wiki/Hash_function)
 
+
+##Errors
+- 6.3.4 Bcrypt not installed
+Error:
+```
+ $ rails c
+Loading development environment (Rails 4.2.2)
+>> User.create(name: "Mike Jones", email: "mike@example.com", password: "foobar", password_confirmation: "foobar")
+You don't have bcrypt installed in your application. Please add it to your Gemfile and run bundle install
+LoadError: cannot load such file -- bcrypt
+```
+Solution:
+Add ```gem 'bcrypt-ruby',   '~> 3.1.2'``` to the Gemfile and run ```bundle install```.
 
 ##Cloud 9
 - https://ide.c9.io/aln787/rails-tutorial
