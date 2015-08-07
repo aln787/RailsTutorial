@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Rails Tutorial by aln787</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Rails Tutorial</h1>
+        <h2>Understanding Rails patterns through application.</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/aln787/RailsTutorial/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/aln787/RailsTutorial/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/aln787/RailsTutorial" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="ruby-on-rails-tutorial" class="anchor" href="#ruby-on-rails-tutorial" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ruby on Rails Tutorial</h1>
+
+<h2>
+<a id="tutorials" class="anchor" href="#tutorials" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tutorials</h2>
+
+<ul>
+<li>
+<p><a href="https://www.railstutorial.org/book/beginning">Rails tutorial</a> using <a href="https://ide.c9.io/aln787/rails-tutorial">cloud 9</a> as recommended.</p>
+
+<ul>
+<li>Completed chapter 6 Modeling Users
+
+<ul>
+<li><a href="https://alex-sample-app-rails-tutorial.herokuapp.com/">(work in progress and slow to load when Heroku falls asleep) Curent state of the sample app</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Future Reading:</p>
+
+<ul>
+<li><a href="http://railscasts.com/episodes/267-coffeescript-basics">Coffee Script</a></li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="important-links" class="anchor" href="#important-links" aria-hidden="true"><span class="octicon octicon-link"></span></a>Important links</h2>
+
+<ul>
+<li><a href="http://apple.stackexchange.com/questions/130324/howto-install-mysql-utilities-using-brew-or-brew-cask">http://apple.stackexchange.com/questions/130324/howto-install-mysql-utilities-using-brew-or-brew-cask</a></li>
+<li><a href="https://gorails.com/setup/osx/10.10-yosemite">https://gorails.com/setup/osx/10.10-yosemite</a></li>
+<li><a href="https://www.railstutorial.org/book/beginning">https://www.railstutorial.org/book/beginning</a></li>
+<li><a href="https://github.com/aln787/RailsTutorial">https://github.com/aln787/RailsTutorial</a></li>
+</ul>
+
+<h2>
+<a id="issues-encountered" class="anchor" href="#issues-encountered" aria-hidden="true"><span class="octicon octicon-link"></span></a>Issues Encountered</h2>
+
+<ul>
+<li>
+<a href="http://stackoverflow.com/questions/9602806/bundler-not-working-with-rbenv-could-not-find-gem">I think the important thing, since I tried this a few times, is to remove the .gem file from your home directory. It seems to get in the way.</a>
+
+<ul>
+<li><a href="https://github.com/carsomyr/rbenv-bundler">https://github.com/carsomyr/rbenv-bundler</a></li>
+<li><a href="http://stackoverflow.com/questions/27686613/error-could-not-find-i18n-0-7-0-in-any-of-the-sources">http://stackoverflow.com/questions/27686613/error-could-not-find-i18n-0-7-0-in-any-of-the-sources</a></li>
+<li><a href="http://stackoverflow.com/questions/7483515/rake-aborted-no-such-file-to-load-bundler-setup-rails-3-1">http://stackoverflow.com/questions/7483515/rake-aborted-no-such-file-to-load-bundler-setup-rails-3-1</a></li>
+<li><a href="http://stackoverflow.com/questions/21309901/getting-migrations-are-pending-run-bin-rake-dbmigrate-rails-env-development">http://stackoverflow.com/questions/21309901/getting-migrations-are-pending-run-bin-rake-dbmigrate-rails-env-development</a></li>
+</ul>
+
+<pre><code>rm -f db/*.sqlite3
+rake db:create
+RAILS_ENV=development rake db:migrate
+rails s -e development
+</code></pre>
+
+<ul>
+<li>undefined method `comments' for #Article:0x007f9bc233f198
+
+<ul>
+<li>has_many :comments, is required in the articles class</li>
+<li><a href="http://stackoverflow.com/questions/5895808/undefined-method-comments-for-post0x19f3d70">http://stackoverflow.com/questions/5895808/undefined-method-comments-for-post0x19f3d70</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Heroku doesn't support sqlite3
+
+<ul>
+<li><a href="http://stackoverflow.com/questions/13083399/heroku-deployment-failed-because-of-sqlite3-gem-error">http://stackoverflow.com/questions/13083399/heroku-deployment-failed-because-of-sqlite3-gem-error</a></li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="mysql" class="anchor" href="#mysql" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mysql</h2>
+
+<ul>
+<li>brew install mysql</li>
+<li>mysql.server restart
+
+<ul>
+<li><a href="http://blog.joefallon.net/2013/10/install-mysql-on-mac-osx-using-homebrew/">http://blog.joefallon.net/2013/10/install-mysql-on-mac-osx-using-homebrew/</a></li>
+</ul>
+</li>
+<li>mysql -u DBUSER -h DBSERVERNAME -p</li>
+</ul>
+
+<h2>
+<a id="psql" class="anchor" href="#psql" aria-hidden="true"><span class="octicon octicon-link"></span></a>PSQL</h2>
+
+<pre><code>$ brew install postgresql
+$ postgres -D /usr/local/var/postgres
+</code></pre>
+
+<h2>
+<a id="heroku" class="anchor" href="#heroku" aria-hidden="true"><span class="octicon octicon-link"></span></a>Heroku</h2>
+
+<pre><code>$ brew cask install heroku-toolbelt
+$ git push heroku master
+$ Heroku logs
+</code></pre>
+
+<h3>
+<a id="other-commands" class="anchor" href="#other-commands" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other Commands</h3>
+
+<pre><code>$ heroku version
+$ heroku login
+$ heroku keys:add
+$ heroku create
+$ git push heroku master
+$ heroku rename rails-tutorial-hello
+heroku run rake db:migrate
+</code></pre>
+
+<h2>
+<a id="rails" class="anchor" href="#rails" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rails</h2>
+
+<pre><code>$ rails server
+$ bundle install
+#Shortcuts
+$ rails s ## = $ rails server
+$ rails c ## = $ rails console
+$ rails g ## = $ rails generate
+$ bundle  ## = $ bundle install  
+$ rake    ## = $ rake test
+$ bundle exec guard init
+$ bundle exec rake test:models
+$ rake db:test:load
+$ bundle exec rake db:migrate
+$ bundle exec rake db:rollback
+</code></pre>
+
+<h3>
+<a id="notes" class="anchor" href="#notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes</h3>
+
+<ul>
+<li>
+<code>&lt;% ... %&gt;</code> executes the code inside</li>
+<li>
+<code>&lt;%= ... %&gt;</code> executes it and inserts the result into the template</li>
+<li>If spring becomes sluggish check running processes <code>$ ps aux</code> optional add filter options:
+<code>
+$ ps aux | grep spring
+ubuntu    1096  0.0  0.0  10548   880 pts/1    S+   13:58   0:00 
+</code>
+
+<ul>
+<li> kill spring process using the process id:</li>
+</ul>
+
+<pre><code>$ kill -9 1096
+</code></pre>
+
+<ul>
+<li>Other options for killing spring</li>
+</ul>
+
+<pre><code>$ spring stop
+$ pkill -9 -f spring
+</code></pre>
+</li>
+<li>Rails uses active record and migrations to simplify the process of interacting with relational data stores.  (SQL is not required in your rails code.)</li>
+<li>A model consist of a single user and a db table will store multiple users
+
+<ul>
+<li>When you add <code>t.timestamps null: false</code> to the migration file it will add 2 db columns (created at the last updated at) 
+###Palindrome?</li>
+</ul>
+</li>
+</ul>
+
+<pre><code>if string == string.reverse
+  "This is a palindrome."
+else
+  "This is not a palindrome."
+end
+</code></pre>
+
+<h3>
+<a id="subclassing" class="anchor" href="#subclassing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Subclassing</h3>
+
+<pre><code>&gt;&gt; class Word &lt; String      # Word inherits from String.
+&gt;&gt;   def palindrome?
+&gt;&gt;     self == self.reverse # self is the string itself.
+  ##self can be excluded on the right == reverse will work
+&gt;&gt;   end
+&gt;&gt; end
+=&gt; nil
+</code></pre>
+
+<h2>
+<a id="ruby" class="anchor" href="#ruby" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ruby</h2>
+
+<h3>
+<a id="notes-1" class="anchor" href="#notes-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes</h3>
+
+<ul>
+<li>Ruby won't interpolate into single quoted strings</li>
+</ul>
+
+<pre><code>&gt;&gt; 'Go #{team}!'     # Single-quoted strings don't allow interpolation
+=&gt; "Go \#{team}!"
+
+#Checks
+&gt;&gt; "".nil?
+&gt;&gt; "".empty?
+
+#Arrays
+&gt;&gt;"Go Team".split
+=&gt; ["Go", "Team"]
+&gt;&gt; "GoxTeamx!".split('x')
+=&gt; ["Go", "Team", "!"]
+##Accessing arrays
+&gt;&gt; team = ["Go", "Team", "!"]
+&gt;&gt; team[0]
+&gt;&gt; team[-1]
+&gt;&gt; team.first
+&gt;&gt; team.second
+&gt;&gt; team.last
+##Validating Arrays
+&gt;&gt; team.empty?
+&gt;&gt; team.include?("Go")
+&gt;&gt; team.sort #use ! to mutate the array
+&gt;&gt; team.reverse #''
+&gt;&gt; team.shuffle #''
+##Modifying arrays
+&gt;&gt; team.sort! #same as the commands above but includes !
+&gt;&gt; team.push("!!!")
+&gt;&gt; team.pop
+&gt;&gt; team.join
+&gt;&gt; team.join(" ")  #include a space between elements
+##Creating arrays
+&gt;&gt; ('a'..'z').to_a
+=&gt; ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+&gt;&gt; (0..9).to_a
+=&gt; [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+&gt;&gt; t = %w[working through the ruby tutorial]  
+=&gt; ["working", "through", "the", "ruby", "tutorial"]
+###Accessing 
+&gt;&gt; t[0..1]
+=&gt; ["working", "through"]
+##Enumeration
+&gt;&gt; ('a'..'z').each { |i| puts i.upcase}
+&gt;&gt; ('a'..'z').each do |i|
+?&gt;   puts i.upcase
+?&gt;   puts '--'
+&gt;&gt; end
+&gt;&gt; team.map { |i| i.upcase}
+=&gt; ["GO", "TEAM", "!"]
+team.map(&amp;:upcase)  ##same result as above
+##Provided example
+&gt;&gt; ('a'..'z').to_a.shuffle[0..20].join
+</code></pre>
+
+<h3>
+<a id="hashes" class="anchor" href="#hashes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hashes</h3>
+
+<pre><code>&gt;&gt; team = {}
+&gt;&gt; team["name"] = "Virginia Tech"
+&gt;&gt; team["mascot"] = "Hokie"
+&gt;&gt; team["sport"] = "football"
+&gt;&gt; team
+=&gt; {"name"=&gt;"Virginia Tech", "mascot"=&gt;"Hokie", "sport"=&gt;"football"}
+</code></pre>
+
+<h3>
+<a id="symbols" class="anchor" href="#symbols" aria-hidden="true"><span class="octicon octicon-link"></span></a>Symbols</h3>
+
+<pre><code>&gt;&gt; team1 = {:name =&gt; "Virginia Tech", :mascot =&gt; "Hokie", :sport =&gt; "football"}
+&gt;&gt; team2 = { name: "Virginia Tech", mascot: "Hokie", sport: "football" }
+&gt;&gt; team1 == team2
+=&gt; true
+</code></pre>
+
+<ul>
+<li>
+<code>!!</code> seems to suppress the return value from user </li>
+</ul>
+
+<pre><code>&gt;&gt; !!user.authenticate("foobar")
+=&gt; true
+##Compared to:
+&gt;&gt; user.authenticate("foobar")
+=&gt; #&lt;User id: 2, name: "Mike Jones", email: "mike@example.com", created_at: "2015-08-05 11:15:43", updated_at: "2015-08-05 11:15:43", password_digest: "$2a$10$I615VDRk4WVkLEjD3v7zAuVRrwVb2GfKI7aydd7zjNt..."&gt;
+##Example user set up below
+</code></pre>
+
+<ul>
+<li>Simple Example Email Regex (weakness multiple successive dots): <code>/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i</code>
+</li>
+<li>Error causing all model test to fail: ActiveRecord::RecordNotUnique: SQLite3::ConstraintException: \
+column email is not unique: INSERT INTO "users" (...
+
+<ul>
+<li>Resolution: <code>$ rake db:test:load</code> <a href="http://stackoverflow.com/questions/5769758/adding-index-to-email-column-culprit-for-unit-tests-failing">details</a>
+</li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="general-links" class="anchor" href="#general-links" aria-hidden="true"><span class="octicon octicon-link"></span></a>General Links</h2>
+
+<ul>
+<li><a href="http://getbootstrap.com/customize/">Bootstrap</a></li>
+<li><a href="https://vesselinv.com/os-x-apps-for-smooth-rails-development/">https://vesselinv.com/os-x-apps-for-smooth-rails-development/</a></li>
+<li><a href="http://macappstore.org/sqlitebrowser/">http://macappstore.org/sqlitebrowser/</a></li>
+<li>
+<a href="http://rubular.com">Regular Expressions</a>
+
+<ul>
+<li><a href="http://guides.rubyonrails.org/testing.html">Rails Testing Guide</a></li>
+</ul>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Cryptographic_hash_function">Cryptographic Hash Function</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Hash_function">Hash Function</a></li>
+</ul>
+
+<h2>
+<a id="errors" class="anchor" href="#errors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Errors</h2>
+
+<ul>
+<li>6.3.4 Bcrypt not installed
+Error:</li>
+</ul>
+
+<pre><code> $ rails c
+Loading development environment (Rails 4.2.2)
+&gt;&gt; User.create(name: "Mike Jones", email: "mike@example.com", password: "foobar", password_confirmation: "foobar")
+You don't have bcrypt installed in your application. Please add it to your Gemfile and run bundle install
+LoadError: cannot load such file -- bcrypt
+</code></pre>
+
+<p>Solution:
+Add <code>gem 'bcrypt-ruby',   '~&gt; 3.1.2'</code> to the Gemfile and run <code>bundle install</code>.</p>
+
+<h2>
+<a id="cloud-9" class="anchor" href="#cloud-9" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cloud 9</h2>
+
+<ul>
+<li>
+<a href="https://ide.c9.io/aln787/rails-tutorial">https://ide.c9.io/aln787/rails-tutorial</a>
+###Commands</li>
+<li>
+<code>rails server -b $IP -p $PORT</code> 
+
+<ul>
+<li>Used instead of <code>rails server</code> for cloud 9 development</li>
+</ul>
+</li>
+<li><code>bundle exec rake test</code></li>
+</ul>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
