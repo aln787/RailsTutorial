@@ -1,9 +1,9 @@
 #Ruby on Rails Tutorial
 
 ##Path
-- Initially viewed [this tutorial](https://www.youtube.com/watch?v=Gzj723LkRJY) but ran into issues since in was using scaffold which does not seem to be supported in rails 2.x
-- Switched to [this guide](http://guides.rubyonrails.org/getting_started.html)
-- Moving on to [the rails tutorial](https://www.railstutorial.org/book/beginning) using [cloud 9](https://ide.c9.io/aln787/rails-tutorial) as recommended.
+- Initially viewed [this tutorial](https://www.youtube.com/watch?v=Gzj723LkRJY) but ran into issues since it was using  rails 2.x.
+- Then completed [this guide](http://guides.rubyonrails.org/getting_started.html).
+- Now working through [the rails tutorial](https://www.railstutorial.org/book/beginning) using [cloud 9](https://ide.c9.io/aln787/rails-tutorial) as recommended.
   - Completed chapter 6 Modeling Users
     - [(work in progress and slow to load when Heroku falls asleep) Curent state of the sample app](https://alex-sample-app-rails-tutorial.herokuapp.com/)
 
@@ -96,6 +96,24 @@ $ bundle exec rake db:rollback
   ```
   $ spring stop
   $ pkill -9 -f spring
+  ```
+- Rails envs
+```
+$ rails c #for development
+$ rails console test #for test
+```
+  - Run the production server
+  ```
+  $ bundle exec rake db:migrate RAILS_ENV=production
+  $ rails server --environment production
+  ```
+- Debugging
+  - Add ```debugger``` a method in the controller:
+  ```
+   def show
+    @user = User.find(params[:id])
+    debugger
+  end
   ```
 - Rails uses active record and migrations to simplify the process of interacting with relational data stores.  (SQL is not required in your rails code.)
 - A model consist of a single user and a db table will store multiple users
@@ -230,6 +248,7 @@ LoadError: cannot load such file -- bcrypt
 ```
 Solution:
 Add ```gem 'bcrypt-ruby',   '~> 3.1.2'``` to the Gemfile and run ```bundle install```.
+  - http://stackoverflow.com/questions/18916040/bcrypt-ruby-you-dont-have-bcrypt-ruby-installed-in-your-application
 
 ##Cloud 9
 - https://ide.c9.io/aln787/rails-tutorial
