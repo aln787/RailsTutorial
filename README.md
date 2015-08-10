@@ -1,5 +1,7 @@
 #Ruby on Rails Tutorial
 
+user.update_attributes(name: "Example User", email: "example@railstutorial.org", password: "foobar", password_confirmation: "foobar")
+
 ##Path
 - Initially viewed [this tutorial](https://www.youtube.com/watch?v=Gzj723LkRJY) but ran into issues since it was using  rails 2.x.
 - Then completed [this guide](http://guides.rubyonrails.org/getting_started.html).
