@@ -6,7 +6,7 @@ user.update_attributes(name: "Example User", email: "example@railstutorial.org",
 - Initially viewed [this tutorial](https://www.youtube.com/watch?v=Gzj723LkRJY) but ran into issues since it was using  rails 2.x.
 - Then completed [this guide](http://guides.rubyonrails.org/getting_started.html).
 - Now working through [the rails tutorial](https://www.railstutorial.org/book/beginning) using [cloud 9](https://ide.c9.io/aln787/rails-tutorial) as recommended.
-  - Completed chapter 7 Sign up 
+  - Ready for section 8.2 Logging in
     - [(slow to load when Heroku falls asleep) Curent state of the sample app](https://alex-sample-app-rails-tutorial.herokuapp.com/)
 
 - Future Reading:
