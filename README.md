@@ -66,6 +66,7 @@ $ heroku rename rails-tutorial-hello
 heroku run rake db:migrate
 ```
 
+
 ##Rails
 ```
 $ rails server
@@ -81,6 +82,7 @@ $ bundle exec rake test:models
 $ rake db:test:load
 $ bundle exec rake db:migrate
 $ bundle exec rake db:rollback
+$ bundle exec rake routes #view routes at a high level
 ```
 ###Notes
 - ```<% ... %>``` executes the code inside
@@ -253,8 +255,10 @@ Add ```gem 'bcrypt-ruby',   '~> 3.1.2'``` to the Gemfile and run ```bundle insta
   - http://stackoverflow.com/questions/18916040/bcrypt-ruby-you-dont-have-bcrypt-ruby-installed-in-your-application
 
 ##Cloud 9
-- https://ide.c9.io/aln787/rails-tutorial
+- [C9 IDE](https://ide.c9.io/aln787/rails-tutorial)
+
 ###Commands
 - ```rails server -b $IP -p $PORT``` 
   - Used instead of ```rails server``` for cloud 9 development
+  - [View C9 Running site](https://rails-tutorial-aln787.c9.io)(Only works after executing `rails server -b $IP -p $PORT`)
 - ```bundle exec rake test```
